@@ -5,6 +5,9 @@ import Home from "./Pages/Home";
 import Produtos from "./Pages/Produtos";
 import Listas from "./Components/Listas";
 import Pessoa from "./Pages/Pessoa";
+import Empresa from "./Pages/Empresa";
+import Atributos from "./Components/Atributos";
+
 const App = () =>{
   return (
     <div className="App">
@@ -19,6 +22,10 @@ const App = () =>{
       <Produtos />
       <Listas />
       <Pessoa />
+      <br/>
+      <Empresa />
+      <br />
+      <Atributos />
     </div>
   );
 }

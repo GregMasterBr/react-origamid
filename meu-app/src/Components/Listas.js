@@ -2,6 +2,10 @@ import React from "react";
 
 const Listas = () => {
     const produtos = ["Notebook", "Smartphone", "Tablet"];
+    const produtosMap = produtos.map(function(item){
+      return <li key={item}>{item.toUpperCase()}</li>
+    });
+    const produtosMapMelhorado = produtos.map(item=><li key={item.toLowerCase()}>{item.toLowerCase()}</li>);    
     const filmes = ["Before Sunrise", "Before Sunset", "Before Midnight"];
     const livros = [
       { nome: "A Clash of Kings", ano: 1996 },
@@ -13,6 +17,12 @@ const Listas = () => {
     return (
       <div>
         <p>{produtos}</p>
+        <br/>
+        <ul>{produtosMap}</ul>
+        <br/>
+        <br/>
+        <ul>{produtosMapMelhorado}</ul>
+        <br/>        
         <ul>{empresas}</ul>
         <ul>
           {filmes.map(filme => (
