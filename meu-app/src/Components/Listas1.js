@@ -1,20 +1,28 @@
-import React from 'react';
-
+import React from "react";
 
 const Listas = () => {
     const produtos = ["Notebook", "Smartphone", "Tablet"];
+    const produtosMap = produtos.map(function(item){
+      return <li key={item}>{item.toUpperCase()}</li>
+    });
+    const produtosMapMelhorado = produtos.map(item=><li key={item.toLowerCase()}>{item.toLowerCase()}</li>);    
     const filmes = ["Before Sunrise", "Before Sunset", "Before Midnight"];
     const livros = [
       { nome: "A Clash of Kings", ano: 1996 },
       { nome: "A Game of Thrones", ano: 1999 },
       { nome: "A Storm of Swords", ano: 2000 }
     ];
-    
     const empresas = [<li key="e1">Apple</li>, <li key="e2">Google</li>];
   
     return (
       <div>
         <p>{produtos}</p>
+        <br/>
+        <ul>{produtosMap}</ul>
+        <br/>
+        <br/>
+        <ul>{produtosMapMelhorado}</ul>
+        <br/>        
         <ul>{empresas}</ul>
         <ul>
           {filmes.map(filme => (
@@ -31,7 +39,7 @@ const Listas = () => {
             ))}
         </ul>
       </div>
-    );
-  };
+  );
+};
 
 export default Listas;

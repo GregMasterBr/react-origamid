@@ -1,0 +1,28 @@
+h1{
+    font-size: 26px;
+    color: blue;
+}
+
+h2{
+    font-size: 20px;
+    color: red;
+}
+
+h2{
+    font-size: 18px;
+    color: green ;
+}
+body{
+    background-color:bisque;
+}
+
+.aberto{
+    background-color: green;
+    color: #fff;
+}
+
+
+.fechado{
+    background-color: transparent;
+    color: #000;
+}

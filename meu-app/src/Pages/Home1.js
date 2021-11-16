@@ -1,24 +1,40 @@
-import React from 'react';
+import React from "react";
 
+const Home = () => {
+    const nav =(
+        <nav>
+            <ul>
+                <li>Teste de criação de componente JSX de forma externa</li>
+            </ul>
+        </nav>    
+    );
 
-const Home= () =>{
+    const nome = "Gregorio Queiroz";
+    const idade = 30;
+
     function meuNome() {
-        return "Gregorio";
-      }
+        return "GregMaster";
+    }
     
       function quadrado(x) {
         return x * x;
-      }
+    }
     
       const Carro = {
         rodas: 4,
         marca: "Ford"
-      };
+    };    
 
-    return (
+  return (
+    <section>
+        <h1>Home</h1>
+        {nav}
+        <br />
+        <h2>{nome}</h2>
+        <p>{idade >= 18 ? "Pode dirigir" : "Não pode dirigir"}</p>
+        <hr />
+        <br />
         <div>
-            <h1>Home</h1>
-            <hr />
             <p>{"MINHA EMPRESA".toLowerCase()}</p>
             <p>{30 * 2}</p>
             <p>{true}</p>
@@ -31,10 +47,12 @@ const Home= () =>{
             <p>{new Date().getFullYear()}</p>
             <p>
                 Marca: {Carro.marca}, Rodas: {Carro.rodas}
-            </p>            
-
+            </p>
         </div>
-    )
-}
+        <hr />
+        <br />        
+    </section>
+  );
+};
 
 export default Home;

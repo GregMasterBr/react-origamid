@@ -1,33 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from "./Components/Header";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
 import Home from "./Pages/Home";
 import Produtos from "./Pages/Produtos";
-import Listas from "./Components/Listas";
-import Pessoa from "./Pages/Pessoa";
-import Empresa from "./Pages/Empresa";
-import Atributos from "./Components/Atributos";
+import NotFound from './Pages/NotFound';
+import Formulario from './Components/Formulario';
+import Header from "./Pages/Header";
 
-const App = () =>{
+
+// Link: cria um link para a rota
+// Route: define o que irá aparecer na tela, caso o path seja ígual ao URL
+// Switch: garante que apenas um route seja ativado por vez
+// BrowserRouter: necessário para fazer o router funcionar (deve envolver links e routes)
+
+const App = () => {
   return (
-    <div className="App">
-      <nav className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Meu App - Greg
-        </p>
-      </nav>
-      <Header />
-      <Home />
-      <Produtos />
-      <Listas />
-      <Pessoa />
-      <br/>
-      <Empresa />
-      <br />
-      <Atributos />
+    <div >
+    <Header />
+    <Router>
+      <Routes>
+        <Route  exact  path="/produtos" element={<Produtos />} />
+        <Route  path="/" element={<Home />} />
+        <Route path="/formulario" element={<Formulario/>}/>
+
+        <Route path="*" element={<NotFound/>}/>
+
+      </Routes>
+    </Router>
     </div>
   );
-}
+};
 
 export default App;
